@@ -16,15 +16,15 @@
 default_platform(:ios)
 
 platform :ios do
-  desc "Sadece Unit testleri çalıştır (UI Testleri atlandı)"
   lane :run_tests do
     scan(
-      scheme: "TestJenkins", 
+      scheme: "TestJenkins",
       device: "iPhone 16",
-      # Aşağıdaki satır UI testlerini devre dışı bırakır:
-      only_testing: "TestJenkinsTests", 
+      only_testing: "TestJenkinsTests",
       output_directory: "fastlane/test_output",
-      output_types: "junit"
+      output_types: "junit",
+      # Dosya adını açıkça belirtiyoruz:
+      output_files: "report.xml" 
     )
   end
 end

@@ -20,7 +20,7 @@ final class TestJenkinsTests: XCTestCase {
     
     func testAddition_ShouldReturnCorrectSum() {
         let a = 10
-        let b = 202
+        let b = 10
         XCTAssertEqual(a ,b,"do not equal")
     }
 

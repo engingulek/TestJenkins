@@ -23,8 +23,8 @@ platform :ios do
       only_testing: "TestJenkinsTests",
       output_directory: "fastlane/test_output",
       output_types: "junit",
-      # Dosya adını açıkça belirtiyoruz:
-      output_files: "report.xml" 
+      output_files: "report.xml",
+      clean: true # Eski artıkları temizle
     )
   end
 end

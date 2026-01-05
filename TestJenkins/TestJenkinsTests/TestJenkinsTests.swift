@@ -17,6 +17,12 @@ final class TestJenkinsTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
+    
+    func testAddition_ShouldReturnCorrectSum() {
+        let a = 10
+        let b = 202
+        XCTAssertEqual(a ,b,"do not equal")
+    }
 
     func testExample() throws {
         // This is an example of a functional test case.

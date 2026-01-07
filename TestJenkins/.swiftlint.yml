@@ -1,0 +1,25 @@
+
+# 1. Varsayılan olarak açık olan ama senin kapatmak istediğin kurallar
+disabled_rules:
+  - trailing_whitespace  # Satır sonundaki boşluklara kızma
+  - force_cast            # 'as!' kullanımına izin ver (önerilmez ama kapatabilirsin)
+
+# 2. Varsayılan olarak kapalı olan ama senin ekstra açmak istediğin kurallar
+opt_in_rules:
+  - empty_count          # .count == 0 yerine .isEmpty kullanımını zorunlu tut
+  - force_unwrapping     # '!' kullanımını tamamen yasakla (hata verir)
+
+# 3. Taranacak ve taranmayacak klasörler
+included:
+  - TestJenkins          # Sadece ana kod klasörünü tara
+excluded:
+  - Pods                 # Kütüphane klasörlerini görmezden gel
+  - DerivedData
+
+line_length:
+  warning: 120    # 120 karakteri geçerse sarı uyarı ver
+  error: 200      # 200 karakteri geçerse kırmızı hata ver (derlemeyi durdurur)
+
+function_body_length:
+  warning: 50     # Bir fonksiyon 50 satırı geçerse uyar
+  error: 100      # 100 satırı geçerse hata ver

@@ -8,12 +8,12 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    var list: [String] = ["engin", "can"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        if list.isEmpty {
+            print("Hi guys bro")
+        }
     }
-
-
 }
 

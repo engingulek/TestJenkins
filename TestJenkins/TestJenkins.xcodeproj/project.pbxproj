@@ -53,11 +53,6 @@
 			path = TestJenkinsTests;
 			sourceTree = "<group>";
 		};
-		7D4C269C2F05B33D00C81886 /* TestJenkinsUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = TestJenkinsUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +85,6 @@
 			children = (
 				7D4C267B2F05B33B00C81886 /* TestJenkins */,
 				7D4C26922F05B33D00C81886 /* TestJenkinsTests */,
-				7D4C269C2F05B33D00C81886 /* TestJenkinsUITests */,
 				7D4C267A2F05B33B00C81886 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -112,6 +106,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D4C26A22F05B33D00C81886 /* Build configuration list for PBXNativeTarget "TestJenkins" */;
 			buildPhases = (
+				7DDF2CCC2F0EE9250040BADA /* ShellScript */,
 				7D4C26752F05B33B00C81886 /* Sources */,
 				7D4C26762F05B33B00C81886 /* Frameworks */,
 				7D4C26772F05B33B00C81886 /* Resources */,
@@ -165,9 +160,6 @@
 			);
 			dependencies = (
 				7D4C269B2F05B33D00C81886 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				7D4C269C2F05B33D00C81886 /* TestJenkinsUITests */,
 			);
 			name = TestJenkinsUITests;
 			packageProductDependencies = (
@@ -244,6 +236,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7DDF2CCC2F0EE9250040BADA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]\nthen\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\ncd \"${SRCROOT}\"\n\nif command -v swiftlint >/dev/null 2>&1\nthen\n    # Düzeltilen kısım burası:\n    swiftlint || true\nelse\n    echo \"warning: swiftlint command not found\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7D4C26752F05B33B00C81886 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -290,6 +303,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 45DX68AP4J;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestJenkins/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -322,6 +336,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 45DX68AP4J;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestJenkins/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

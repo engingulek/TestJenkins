@@ -11,7 +11,7 @@ class ViewController: UIViewController {
     var list: [String] = ["engin", "can"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        if list.isEmpty {
+        if list.count == 0 {
             print("Hi guys bro")
         }
     }

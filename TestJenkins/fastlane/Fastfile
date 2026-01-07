@@ -22,9 +22,17 @@ platform :ios do
       device: "iPhone 16",
       only_testing: "TestJenkinsTests",
       output_directory: "fastlane/test_output",
-      output_types: "junit",
-      output_files: "report.xml",
-      clean: true # Eski artıkları temizle
+      
+      # GÜNCELLEME: Hem HTML (insanlar için) hem JUNIT (Jenkins için) çıktı üretir
+      output_types: "html,junit",
+      
+      # GÜNCELLEME: Dosya isimlerini belirleyelim
+      output_files: "report.html,report.xml",
+      
+      clean: true,
+      
+      # OPSİYONEL: Testler fail olsa bile lane'in çökmesini istemiyorsan (Jenkins post'ta kontrol etmek için)
+      # fail_build: false 
     )
   end
 end
